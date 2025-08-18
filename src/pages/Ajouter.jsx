@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router"; // (react-router seul)
 import { useDataRecette } from "../data/DataRecette.jsx";
 import Footer from "../components/footer.jsx";
+import "../styles/styles.css";
 
 export default function Ajouter() {
   const [saisie, setSaisie] = useState("");
@@ -17,7 +18,7 @@ export default function Ajouter() {
 
   return (
     <div>
-      <button onClick={() => navigate(-1)}>←</button>
+      <button  onClick={() => navigate(-1)}>←</button>
       <h2>Ajouter des ingrédients</h2>
 
       <input
@@ -26,10 +27,10 @@ export default function Ajouter() {
         onChange={(e) => setSaisie(e.target.value)}
         placeholder="Ex: tomate"
       />
-      <button onClick={handleAdd}>Ajouter</button>
-      <button onClick={clearIngredients} style={{ marginLeft: 8 }}>Vider</button>
+      <button className="btn-go" onClick={handleAdd}>Ajouter</button>
 
       <ul>
+        <h2>dans mon frigo j'ai</h2>
         {ingredients.map((ing) => (
           <li key={ing}>
             {ing} <button onClick={() => removeIngredient(ing)}>x</button>
@@ -38,7 +39,10 @@ export default function Ajouter() {
       </ul>
 
       {/* Va à /recettes : l’écran lira recettesFiltrees selon les ingrédients */}
-      <button onClick={() => navigate("/recettes")}>Go</button>
+      <button className="btn-go" onClick={() => navigate("/recettes")}>
+      GO
+      </button>
+
       <Footer />
     </div>
      

@@ -10,13 +10,6 @@ export default function App() {
     <div className="wrap">
       <h1>Frigo Vide</h1>
 
-      <nav>
-        <NavLink to="/" end>Accueil</NavLink>
-        <NavLink to="/ajouter">Ajouter</NavLink>
-        <NavLink to="/recettes">Recettes</NavLink>
-        <NavLink to="/favoris">Favoris</NavLink>
-      </nav>
-
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/ajouter" element={<Ajouter />} />

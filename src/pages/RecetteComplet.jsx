@@ -33,7 +33,7 @@ export default function RecetteComplet() {
   return (
     <div className="recipe-details">
       <button onClick={() => navigate(-1)} style={{ marginBottom: 12 }}>
-        ← Retour
+        ←
       </button>
 
       <h2>{recette.nom}</h2>

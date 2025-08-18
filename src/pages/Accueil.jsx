@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Ajouter from "./Ajouter";
+import "../styles/styles.css";
 
 export default function App() {
   const [page, setPage] = useState("accueil");
@@ -13,7 +14,7 @@ export default function App() {
             <img src="/images/frigo-vide.png" alt="Frigo" />
           </div>
           <p>Ajoutez vos ingrédients et trouvez des recettes adaptées.</p>
-          <button onClick={() => setPage("ajouter")}>
+          <button className="btn-go" onClick={() => setPage("ajouter")}>
             Qu’as-tu dans ton frigo ?
           </button>
         </div>

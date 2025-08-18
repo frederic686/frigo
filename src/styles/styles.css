@@ -1,0 +1,69 @@
+.btn-go {
+  background-color: #ff5a00;  /* orange vif */
+  color: white;               /* texte blanc */
+  border: none;               /* pas de bordure */
+  border-radius: 8px;         /* coins arrondis */
+  padding: 12px 32px;         /* taille interne */
+  font-size: 18px;            /* taille du texte */
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Effet au survol */
+.btn-go:hover {
+  background-color: #e64a00;  /* orange un peu plus foncé */
+  transform: scale(1.05);
+}
+
+/* Effet quand on clique */
+.btn-go:active {
+  transform: scale(0.95);
+}
+/* Conteneur principal */
+ul {
+  background: #fff;
+  border: 2px solid #000;     /* bordure noire épaisse */
+  border-radius: 10px;        /* coins arrondis */
+  padding: 16px 20px;
+  list-style: none;
+  max-width: 320px;           /* largeur similaire à la maquette */
+  font-family: "Jura", sans-serif;
+  font-size: 16px;
+}
+
+/* Titre */
+ul h2 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "ADLaM Display", sans-serif;
+}
+
+/* Chaque ingrédient */
+ul li {
+  display: flex;
+  justify-content: space-between;  /* texte à gauche, bouton croix à droite */
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;   /* petite séparation grise */
+}
+
+/* Supprimer le trait sur le dernier */
+ul li:last-child {
+  border-bottom: none;
+}
+
+/* Bouton croix */
+ul li button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+ul li button:hover {
+  color: red;
+}
