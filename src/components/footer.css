@@ -1,0 +1,63 @@
+.footer {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background-color: #1a120c;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.footer nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.footer nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  padding: 8px 12px;
+}
+
+/* --- Icônes en blanc via mask --- */
+.icon {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  background: #fff;                  /* couleur de l’icône (blanc) */
+  /* Masque standard + -webkit- pour compatibilité */
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  transition: transform .2s;
+}
+
+/* Pointez bien vers vos images dans public/images */
+.icon--home {
+  -webkit-mask-image: url("/images/home.png");
+  mask-image: url("/images/home.png");
+}
+.icon--tab {
+  -webkit-mask-image: url("/images/tab.png");
+  mask-image: url("/images/tab.png");
+}
+.icon--fav {
+  -webkit-mask-image: url("/images/favoris.png");
+  mask-image: url("/images/favoris.png");
+}
+
+/* Effet hover */
+.footer nav a:hover .icon {
+  transform: scale(1.2);
+}
