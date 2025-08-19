@@ -17,7 +17,7 @@ export default function Ajouter() {
   };
 
   return (
-    <div>
+    <div className="ajout">
       <button  onClick={() => navigate(-1)}>←</button>
       <h2>Ajouter des ingrédients</h2>
 

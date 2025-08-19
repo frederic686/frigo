@@ -2,7 +2,13 @@ body {
   background-color: #FFF1EA;
 }
 
-
+.ajout {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
 .btn-go {
   background-color: #ff5a00;  /* orange vif */
   color: white;               /* texte blanc */
@@ -72,3 +78,74 @@ ul li button {
 ul li button:hover {
   color: red;
 }
+
+
+.recipe-card {
+  display: flex;
+}
+
+
+/* recette */
+
+.recettes-wrap { padding-bottom: 70px; } /* laisser la place au footer fixe */
+.btn-back { margin-bottom: 8px; }
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne */
+  gap: 14px;                             /* espace entre les cartes */
+  justify-items: center;                 /* centre chaque carte */
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #fff;
+  border: 3px solid #000;   /* bordure noire épaisse */
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 2px 0 #000;
+  outline: none;
+  width: 100%;              /* la carte prend toute la largeur de sa colonne */
+  max-width: 250px;         /* limite la taille */
+}
+
+.recipe-card:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #000; }
+.recipe-card:focus { box-shadow: 0 0 0 3px #ff5a00, 0 2px 0 #000; }
+
+.thumb { width: 100%; height: 120px; background: #f3f3f3; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.card-body { padding: 10px; }
+.card-title { margin: 0 0 6px; font-size: 16px; line-height: 1.2; }
+.card-desc { margin: 0; font-size: 12px; color: #222; }
+
+/* Bouton Favori (ne navigue pas) */
+.fav-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 2px solid #000;
+  background: #fff;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 0 1px 0 #000;
+  cursor: pointer;
+  color: #000; /* étoile par défaut = noire */
+}
+
+.fav-btn.active {
+  color: orange; /* étoile orange quand c’est en favoris */
+}
+
+.fav-btn:hover {
+  transform: scale(1.06);
+}
+

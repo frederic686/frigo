@@ -7,13 +7,16 @@ function imageSrc(img) {
   return img.startsWith("http") ? img : `/images/${img}`;
 }
 
+
 export default function Recettes() {
   const navigate = useNavigate();
   const { recettesFiltrees, favoris, toggleFavori, ingredients } = useDataRecette();
 
+  const open = (id) => navigate(`/recette/${id}`);
+
   return (
-    <div>
-      <button onClick={() => navigate(-1)}>←</button>
+    <div className="recettes-wrap">
+      <button onClick={() => navigate(-1)} className="btn-back">←</button>
       <h2>Recettes</h2>
 
       {ingredients.length === 0 && (
@@ -26,20 +29,45 @@ export default function Recettes() {
         </p>
       )}
 
-      {recettesFiltrees.map((r) => (
-        <div key={r.id} className="recipe-card">
-          <h3>{r.nom}</h3>
-          {r.image && <img src={imageSrc(r.image)} alt={r.nom} width="150" />}
-          <p>{r.description}</p>
+      <div className="recipes-grid">
+        {recettesFiltrees.map((r) => (
+          <article
+            key={r.id}
+            className="recipe-card"
+            role="button"
+            tabIndex={0}
+            onClick={() => open(r.id)}
+            onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && open(r.id)}
+          >
+            {/* Bouton favori – n’ouvre PAS la page détail */}
+            <button
+              className={`fav-btn ${favoris.includes(r.id) ? "active" : ""}`}
+              aria-pressed={favoris.includes(r.id)}
+              aria-label={favoris.includes(r.id) ? "Retirer des favoris" : "Ajouter aux favoris"}
+              title={favoris.includes(r.id) ? "Retirer des favoris" : "Ajouter aux favoris"}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleFavori(r.id);
+              }}
+            >
+              {favoris.includes(r.id) ? "★" : "☆"}
+            </button>
 
-          <button onClick={() => navigate(`/recette/${r.id}`)}>Voir</button>{" "}
-          <button onClick={() => toggleFavori(r.id)}>
-            {favoris.includes(r.id) ? "Retirer" : "Favori"}
-          </button>
-        </div>
-      ))}
+
+            <div className="thumb">
+              {r.image && <img src={imageSrc(r.image)} alt={r.nom} />}
+            </div>
+
+            <div className="card-body">
+              <h3 className="card-title">{r.nom}</h3>
+              {r.description && <p className="card-desc">{r.description}</p>}
+            </div>
+          </article>
+        ))}
+      </div>
+
       <Footer />
     </div>
-    
   );
 }
+
