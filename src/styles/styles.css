@@ -149,3 +149,16 @@ ul li button:hover {
   transform: scale(1.06);
 }
 
+.detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
