@@ -1,6 +1,6 @@
 // src/pages/Favoris.jsx
 import { useMemo } from "react";
-import { useDataRecette } from "../data/DataRecette.jsx";
+import { useDataRecette } from "../context/RecetteContext.jsx";
 import Footer from "../components/footer.jsx";
 
 function imageSrc(img) {

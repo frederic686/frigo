@@ -1,8 +1,8 @@
 // src/pages/RecetteComplet.jsx
 import { useParams, useNavigate } from "react-router";
 import { useMemo } from "react";
-import { useDataRecette } from "../data/DataRecette.jsx";
-import recettes from "../data/recettes_cuisine.json"; // JSON dans le même dossier "data"
+import { useDataRecette } from "../context/RecetteContext.jsx";
+import recettes from "../context/recettes_cuisine.json"; // JSON dans le même dossier "data"
 
 function imageSrc(img) {
   if (!img) return undefined;

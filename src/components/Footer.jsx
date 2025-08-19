@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import "./footer.css";
-import { useDataRecette } from "../data/DataRecette.jsx";
+import { useDataRecette } from "../context/RecetteContext.jsx";
 
 export default function Footer() {
   const { favoris } = useDataRecette();

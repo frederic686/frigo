@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router"; // (react-router seul)
-import { useDataRecette } from "../data/DataRecette.jsx";
+import { useDataRecette } from "../context/RecetteContext.jsx";
 import Footer from "../components/footer.jsx";
 import "../styles/styles.css";
 
