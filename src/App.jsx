@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink } from "react-router";
+import { Routes, Route} from "react-router";
 import Accueil from "./pages/Accueil.jsx";
 import Ajouter from "./pages/Ajouter.jsx";
 import Recettes from "./pages/Recettes.jsx";
@@ -8,8 +8,6 @@ import Favoris from "./pages/Favoris.jsx";
 export default function App() {
   return (
     <div className="wrap">
-      <h1>Frigo Vide</h1>
-
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/ajouter" element={<Ajouter />} />

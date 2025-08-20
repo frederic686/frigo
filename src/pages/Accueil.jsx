@@ -13,9 +13,9 @@ export default function App() {
           <div className="frigo">
             <img src="/images/frigo-vide.png" alt="Frigo" />
           </div>
-          <p>Ajoutez vos ingrédients et trouvez des recettes adaptées.</p>
+          <p>The app that helps you eat better by using your leftovers and saving as much as possible!</p>
           <button className="btn-go" onClick={() => setPage("ajouter")}>
-            Qu’as-tu dans ton frigo ?
+            What’s in your fridge?
           </button>
         </div>
       )}

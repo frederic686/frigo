@@ -25,15 +25,15 @@ export default function RecetteComplet() {
     return (
       <div className="recipe-details">
         <p>Recette introuvable.</p>
-        <button onClick={() => navigate(-1)}>←</button>
+        <button className="btn-back" onClick={() => navigate(-1)}>←</button>
       </div>
     );
   }
 
   return (
     <div className="recipe-details">
-      <button onClick={() => navigate(-1)} style={{ marginBottom: 12 }}>
-        ←
+      <button className="btn-back"onClick={() => navigate(-1)} style={{ marginBottom: 12 }}>
+        ← Apple Or Peach Strudel with honney 
       </button>
 
       <h2>{recette.nom}</h2>

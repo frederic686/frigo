@@ -27,8 +27,7 @@ export default function Favoris() {
   if (recettesFav.length === 0) {
     return (
       <div className="recettes-wrap">
-        <button onClick={() => navigate(-1)} className="btn-back">←</button>
-        <h2>Mes favoris</h2>
+        <button onClick={() => navigate(-1)} className="btn-back"> ← My recipies</button>
         <p>Aucun favori</p>
         <Footer />
       </div>

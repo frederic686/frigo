@@ -162,3 +162,22 @@ ul li button:hover {
   justify-content: center;
   align-items: center;
 }
+
+@font-face {
+  font-family: "Jura";
+  src: url("/fonts/Jura-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, p , button {
+  font-family: "Jura", sans-serif;
+}
+
+.btn-back {
+  background-color: transparent;
+  border: 0;
+  font-family: "Jura", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+}

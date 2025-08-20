@@ -16,7 +16,7 @@ export default function Recettes() {
 
   return (
     <div className="recettes-wrap">
-      <button onClick={() => navigate(-1)} className="btn-back">←</button>
+      <button onClick={() => navigate(-1)} className="btn-back"> ← Suggested recipies</button>
       <h2>Recettes</h2>
 
       {ingredients.length === 0 && (
